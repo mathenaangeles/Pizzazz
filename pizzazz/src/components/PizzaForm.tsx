@@ -1,4 +1,5 @@
 import * as React from "react";
+import axios from "axios";
 import { Form, Button, Card } from "react-bootstrap";
 import pepperoni from "../images/pepperoni.png";
 import mushrooms from "../images/mushroom.png";
@@ -57,6 +58,15 @@ class PizzaForm extends React.Component<{}, State> {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    const pizza = {
+      size: this.state.size,
+      crust: this.state.crust,
+      toppings: this.state.toppings,
+      total: this.state.total,
+    };
+    axios
+      .post("http://localhost:4000/pizza/create", pizza)
+      .then((res) => console.log(res.data));
   };
   handleSizeChange(e: React.ChangeEvent<HTMLInputElement>) {
     this.setState({ size: e.target.value });
