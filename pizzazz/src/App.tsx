@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./App.css";
+import "./stylesheets/App.css";
 import { Route, Link, BrowserRouter as Router, Switch } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import PizzaForm from "./components/PizzaForm";
@@ -11,8 +11,10 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
-          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Navbar.Brand href="#home">PIZZAZZ</Navbar.Brand>
+          <Navbar collapseOnSelect expand="lg" variant="dark">
+            <Navbar.Brand>
+              <Link to="/">PIZZAZZ</Link>
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="ml-auto">

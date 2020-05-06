@@ -1,0 +1,14 @@
+.menu {
+  padding: 5em;
+  font-family: "Roboto", sans-serif;
+}
+
+.menu .card {
+  border: 2px solid #ee3a00;
+}
+
+.menu .card-header {
+  font-family: "Roboto Slab", serif;
+  font-weight: bold;
+  font-size: 1.5em;
+}

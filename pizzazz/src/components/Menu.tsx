@@ -1,6 +1,8 @@
 import * as React from "react";
 import axios from "axios";
-import { Card } from "react-bootstrap";
+import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import { Container, Row, Col } from "reactstrap";
+import "../stylesheets/Menu.css";
 
 interface Pizza {
   size: string;
@@ -29,19 +31,29 @@ class Menu extends React.Component<{}, State> {
   }
   render() {
     return (
-      <div>
-        {this.state.pizzas.map((pizza) => (
-          <Card>
-            <Card.Body>
-              {pizza.size}
-              {pizza.crust}
-              {pizza.toppings.map((topping) => {
-                return topping;
-              })}
-              {pizza.total}
-            </Card.Body>
-          </Card>
-        ))}
+      <div className="menu">
+        <Container>
+          <Row>
+            {this.state.pizzas.reverse().map((pizza) => (
+              <Col xs="4">
+                <Card className="mb-5">
+                  <Card.Header>TOTAL = ${pizza.total}</Card.Header>
+                  <Card.Body>
+                    <Card.Text>
+                      This is a <b>{pizza.size}</b> pizza with a{" "}
+                      <b>{pizza.crust}</b> crust.
+                    </Card.Text>
+                  </Card.Body>
+                  <ListGroup className="list-group-flush">
+                    {pizza.toppings.map((topping) => {
+                      return <ListGroupItem>{topping}</ListGroupItem>;
+                    })}
+                  </ListGroup>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Container>
       </div>
     );
   }
