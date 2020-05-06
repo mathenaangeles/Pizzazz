@@ -1,6 +1,6 @@
 # Pizzazz
 
-Pizzazz is an application that allows users to create their own pizza. The cost of each one is calculated depending on the size, crust type, and amount of extra toppings.
+Pizzazz is an application that allows users to create their own pizza. The cost of each one is calculated depending on the size, the crust type, and the amount of extra toppings.
 
 ### __Installation__
 
