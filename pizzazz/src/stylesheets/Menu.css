@@ -12,3 +12,13 @@
   font-weight: bold;
   font-size: 1.5em;
 }
+
+.menu .no-pizzas {
+  font-weight: bold;
+  font-family: "Roboto Slab", serif;
+}
+
+.menu .no-pizzas-link, .no-pizzas-link:hover  {
+  color: #000000;
+  text-decoration: none !important;
+}

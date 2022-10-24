@@ -1,22 +1,24 @@
 .page-one,
 .page-two,
 .page-three {
-  padding: 5em;
+  padding: 3em;
   font-family: "Roboto", sans-serif;
+  overflow-x: scroll;
 }
 
 .page-one {
   background-image: url("../images/pizza.png");
   background-repeat: no-repeat;
-  height: 700px;
+  height: 100vh;
   background-size: cover;
 }
 
 .page-one-panel {
   border: 0.3em solid #ee3a00;
   background-color: white;
-  padding: 3em 2em;
-  width: 60%;
+  padding: 2em 2em;
+  min-width: 500px;
+  overflow-x: scroll;
 }
 
 .page-one-panel h1 {
@@ -54,6 +56,10 @@ select.form-control:focus {
 
 .topping-card .card-body {
   padding: 0px !important;
+}
+
+.topping-card {
+  width: 300px;
 }
 
 .card {

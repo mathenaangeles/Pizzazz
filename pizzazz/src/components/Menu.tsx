@@ -1,5 +1,6 @@
 import * as React from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import { Container, Row, Col } from "reactstrap";
 import "../stylesheets/Menu.css";
@@ -33,7 +34,15 @@ class Menu extends React.Component<{}, State> {
     return (
       <div className="menu">
         <Container>
-          <Row>
+          <Row> 
+            {this.state.pizzas.length===0 &&
+              <div>
+                <h1 className="no-pizzas">No Pizzas Found...</h1>
+                <Link to="/" className="no-pizzas-link">
+                  <h5 className="mt-2">Click here to add your own custom pizza to the menu.</h5>
+                </Link>
+              </div>
+            }
             {this.state.pizzas.reverse().map((pizza) => (
               <Col xs="4">
                 <Card className="mb-5">

@@ -123,7 +123,7 @@ class PizzaForm extends React.Component<Props, State> {
       if (this.state.toppings.length > 3) {
         const extraIngredients = this.state.toppings.length - 3;
         this.setState((state) => ({
-          total: state.total + 0.5 * extraIngredients,
+          total: state.total + (0.5 * extraIngredients),
         }));
       }
     }
@@ -143,15 +143,15 @@ class PizzaForm extends React.Component<Props, State> {
                   <Form.Label>Size</Form.Label>
                   <Form.Control as="select" onChange={this.handleSizeChange}>
                     <option>Small</option>
-                    <option>Medium</option>
-                    <option>Large</option>
+                    <option>Medium</option> 
+                    <option>Large</option> 
                   </Form.Control>
                 </Form.Group>
                 <Form.Group>
                   <Form.Label>Crust Type</Form.Label>
                   <Form.Control as="select" onChange={this.handleCrustChange}>
-                    <option>Thin</option>
-                    <option>Thick</option>
+                    <option>Thin</option> 
+                    <option>Thick</option> 
                   </Form.Control>
                 </Form.Group>
               </Form>
@@ -186,11 +186,12 @@ class PizzaForm extends React.Component<Props, State> {
                 );
               })}
             </h5>
+            <p className="ml-3 mb-3"> You will be changed an extra <b>$0.50</b> after every additional topping after the third one. </p>
             {message}
             <Container className="page-two-choices">
               <Row>
                 {choices.map((choice) => (
-                  <Col xs="4">
+                  <Col key={choice} lg="4">
                     <Card className="topping-card mb-5">
                       <Card.Img variant="top" src={choice.image} />
                       <Card.Body>
@@ -220,7 +221,7 @@ class PizzaForm extends React.Component<Props, State> {
           sPrice = 8;
         } else if (this.state.size === "Medium") {
           sPrice = 10;
-        } else {
+        } else if (this.state.size === "Large") {
           sPrice = 12;
         }
         let cPrice;
